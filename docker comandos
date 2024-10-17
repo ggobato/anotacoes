@@ -1,0 +1,8 @@
+//criando e conectando uma rede
+docker network create (minha-rede)
+docker network connect (minha-rede) (meu-container)
+
+//criando imagens a partir de containers que ja existem
+docker commit (id-container) (nome-imagem):(tag)
+docker images
+
