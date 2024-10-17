@@ -1,1 +1,84 @@
+//Principais Códigos Linux//
 
+ls -> lista diretorios
+cat -> mostra arquivos
+more -> mostra arquivos aos poucos
+touch -> cria arquivos
+mkdir -> cria diretorios
+
+cd [nome_pasta]-> entra em pastas
+cd .. -> volta para um diretorio anterior
+
+echo "[texto]" > nome_arquivo -> escreve o conteudo dentro de um arquivo, sobreescrevendo
+echo "[texto]" >> nome_arquivo -> escreve o conteudo dentro de um arquivo, concatenando
+
+rm [nome_arquivo] -> apaga um arquivo
+rm -rf [nome] -> apaga forçando e de forma recursiva
+rm -rf * -> apaga todos os arquivos daquele diretirio
+mv -> mudar nomes de arquivos
+
+
+//instalar docker no ubuntu
+sudo su
+apt update
+apt install apt-transport-https ca-certificates curl software-properties-common -y
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+apt update
+apt install docker-ce -y
+systemctl status docker
+
+
+//criar um container
+docker run -d -p 80:80 --name nginx nginx:latest 
+docker exec -it nginx /bin/bash
+
+
+//restart container
+docker container stop nginx
+docker container start nginx
+
+//criar um SQL no docker
+
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=1234 -d mysql:latest
+docker exec -it mysql mysql -u root -p
+
+//instalar o (vim,nano)
+apt-get install (vim/nano) -y
+
+//entrando na pasta default do nginx
+cd etc/nginx/conf.d
+vim default.conf
+"Dentro da pasta default acrescentamos os seguintes códigos
+
+    location /"nome da aplicaçaõ" {
+      proxy_pass http://"IP DA INSTANCIA/CONTAINER":3000
+}
+
+
+//entrando no main
+"entre no container do backend dps na aplicação e mude o codigo que você colocou"
+
+
+//entrando na pasta HTML
+cd usr/share/nginx/html
+vim index.html
+
+
+//criando network
+(criar um rede de conexao entre containers)
+docker network create "minha-rede" 
+(comandos do network)
+docker network inspect "minha-rede" //ver as conexoes da rede
+docker network ls //ver as redes
+docker network connect minha-rede "nome-container"
+
+//instalando o npm
+apt-get update
+apt-get install npm -y
+npm i dotenv express (pacotes)
+npm start
+
+//pm2 instalação
+npm i pm2 -g
+pm2 start main.js --name [nome] (arquivo javascrip)
