@@ -1,1 +1,5 @@
 docker run -it --name backend -v $(pwd):/usr/src/app -w /usr/src/app -p 3000:3000 node:18 bash
+docker exec -it backend /bin/bash
+
+apt-get update
+apt-get install npm -y
