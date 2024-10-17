@@ -4,3 +4,9 @@ docker exec -it frontend /bin/bash
 apt-get update
 apt-get install nano -y
 
+nano etc/nginx/conf.d/default.conf
+nano usr/share/nginx/html/index.html
+
+proxy_pass http://{ip_instancia}:3000
+
+
