@@ -6,3 +6,5 @@ docker network connect (minha-rede) (meu-container)
 docker commit (id-container) (nome-imagem):(tag)
 docker images
 
+docker network inspect (minha-rede)
+
