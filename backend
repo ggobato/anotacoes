@@ -9,4 +9,13 @@ cd projeto
 npm init -y
 
 touch index.js
+touch .env
 nano index.js
+nano .env
+
+npm i dotenv mysql2 pm2 -g
+npm i express
+
+
+
+
