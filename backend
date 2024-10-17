@@ -2,4 +2,11 @@ docker run -it --name backend -v $(pwd):/usr/src/app -w /usr/src/app -p 3000:300
 docker exec -it backend /bin/bash
 
 apt-get update
-apt-get install npm -y
+apt-get install npm nano -y
+
+mkdir projeto
+cd projeto
+npm init -y
+
+touch index.js
+nano index.js
