@@ -1,0 +1,16 @@
+ls -> lista diretorios
+cat -> mostra arquivos
+more -> mostra arquivos aos poucos
+touch -> cria arquivos
+mkdir -> cria diretorios
+
+cd [nome_pasta]-> entra em pastas
+cd .. -> volta para um diretorio anterior
+
+echo "[texto]" > nome_arquivo -> escreve o conteudo dentro de um arquivo, sobreescrevendo
+echo "[texto]" >> nome_arquivo -> escreve o conteudo dentro de um arquivo, concatenando
+
+rm [nome_arquivo] -> apaga um arquivo
+rm -rf [nome] -> apaga forçando e de forma recursiva
+rm -rf * -> apaga todos os arquivos daquele diretirio
+mv -> mudar nomes de arquivos
