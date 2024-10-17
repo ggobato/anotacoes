@@ -1,3 +1,6 @@
 docker run -d -p 8080:8080 --name frontend nginx:latest
 docker exec -it frontend /bin/bash
 
+apt-get update
+apt-get install nano -y
+
