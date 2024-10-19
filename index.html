@@ -1,0 +1,32 @@
+<h1>Hello World Skills</h1>
+
+<p>Seja Bem Vindo(a)!!!!</p>
+
+<div id="resultado"></div>
+
+<button onclick="myFunction()">Consultar Boletim</button>
+
+<script>
+  const myFunction = function () {
+    fetch("/boletim", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Erro: ${response.status}`);
+        }
+        return response.text(); // Retorna o texto da resposta
+      })
+      .then((result) => {
+        document.getElementById("resultado").innerHTML = result; // Insere o texto no elemento
+        console.log(result); // Exibe no console
+      })
+      .catch((error) => {
+        console.error('Erro na requisição:', error); // Mostra erros no console
+        document.getElementById("resultado").innerHTML = "Erro ao carregar os dados.";
+      });
+  };
+</script>
